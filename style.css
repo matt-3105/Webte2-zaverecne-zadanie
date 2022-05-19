@@ -1,0 +1,31 @@
+#langHeader{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#langHeader a{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: aqua;
+    border-radius: 2px;
+    padding: 8px 15px;
+    margin: 5px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+input[type=submit] {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background-color: aqua;
+    border-radius: 2px;
+    padding: 8px 15px;
+    width: 200px;
+    margin: 5px;
+}

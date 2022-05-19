@@ -1,7 +1,5 @@
 <?php
-
-
-
+include "config.php";
 ?>
 
 <!doctype html>
@@ -15,15 +13,19 @@
     <title>Finálne zadanie</title>
 </head>
 <body>
-<h1>Final</h1>
+<div id="langHeader">
+    <a href="index.php?lang=en"><?php echo $lang['lang_en'] ?></a>
+    <a href="index.php?lang=sk"><?php echo $lang['lang_sk'] ?></a>
+</div>
+<h1><?php echo $lang['greeting'] ?></h1>
 <form action="index.php">
-    <label for="name">
+    <label for="name"><?php echo $lang['name'] ?>
         <input type="text" name="name" id="name">
     </label>
-    <label for="codeArea">
-        <textarea name="codeArea" id="codeArea" cols="30" rows="10"></textarea>
+    <label for="txtArea"><?php echo $lang['code'] ?>
+        <textarea name="txtArea" id="txtArea" cols="30" rows="10" placeholder="<?php echo $lang['placeholder'] ?>"></textarea>
     </label>
-    <input type="submit" name="submit" id="submit" value="Odoslať">
+    <input type="submit" name="submit" id="submit" value="<?php echo $lang['button'] ?>">
 </form>
 </body>
 </html>
