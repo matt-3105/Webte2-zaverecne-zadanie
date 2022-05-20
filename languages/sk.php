@@ -1,10 +1,15 @@
 <?php
 $lang = array(
-    "greeting" => "Vytajte",
+    "greeting" => "Vitajte",
     "name" => "Vaše meno",
     "code" => "Rovnica",
-    "placeholder" => "Sem zadajte rovnicu na výpočet",
+    "placeholder" => "Hodnota 'r'",
     "button" => "Odoslať",
+    "play_button" => "Prehrať",
     "lang_en" => "Anglicky",
-    "lang_sk" => "Slovensky"
+    "lang_sk" => "Slovensky",
+    "graph" => "Graf",
+    "animation" => "Animácia",
+    "nav_mp" => "Hlavná stránka",
+    "nav_docs" => "Dokumentácia"
 );
