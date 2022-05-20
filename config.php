@@ -11,3 +11,5 @@ else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_
 }
 
 require_once "languages/" . $_SESSION['lang'] . ".php";
+
+$key = "abcd";
