@@ -52,7 +52,7 @@ include "config.php";
     <div id="my-chart-wrapper">
         <canvas id="my-chart"></canvas>
     </div>
-    <canvas id="car" height="380" width="70"></canvas>
+    <canvas id="car" height="380" width="85"></canvas>
     <div id="users"></div>
 </section>
 

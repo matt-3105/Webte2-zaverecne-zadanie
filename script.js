@@ -55,6 +55,20 @@ const config = {
         },
         animation: false,
         responsive: false,
+        scales: {
+            y: {
+                title : {
+                    display: true,
+                    text: 'x[m]'
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 't[s]'
+                }
+            }
+        }
     }
 }
 
@@ -177,7 +191,14 @@ const drawGround = (r) => {
     ctx.beginPath();
     ctx.moveTo(60, 331);
     ctx.lineTo(70, 331);
+    ctx.moveTo(60, 331 - r);
+    ctx.lineTo(70, 331 - r);
+    ctx.moveTo(65, 331);
+    ctx.lineTo(65, 331 - r);
     ctx.stroke();
+    ctx.fillStyle = 'black';
+    ctx.font = '20px Arial';
+    ctx.fillText('r', 70, 331 - r + 5);
     return 330 - r;
 }
 
@@ -187,12 +208,7 @@ const drawWheel = (diff, ground) => {
     ctx.rect(0, y, 60, 40);
     ctx.fillStyle = 'blue';
     ctx.fill();
-    ctx.beginPath();
-    ctx.moveTo(60, ground - 101);
-    ctx.lineTo(70, ground - 101);
-    ctx.moveTo(60, y+39);
-    ctx.lineTo(70, y+39);
-    ctx.stroke();
+    drawLabel('2', y, ground, 101);
     return y;
 }
 
@@ -202,13 +218,24 @@ const drawCar = (diff, ground) => {
     ctx.rect(0, y, 60, 40);
     ctx.fillStyle = 'red';
     ctx.fill();
+    drawLabel('1', y, ground, 241);
+    return y;
+}
+
+const drawLabel = (index, y, ground, offset) => {
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText('x', 70, y+44);
+    ctx.font = '10px Arial';
+    ctx.fillText(index, 80, y+46);
     ctx.beginPath();
-    ctx.moveTo(60, ground - 241);
-    ctx.lineTo(70, ground - 241);
+    ctx.moveTo(60, ground - offset);
+    ctx.lineTo(70, ground - offset);
     ctx.moveTo(60, y+39);
     ctx.lineTo(70, y+39);
+    ctx.moveTo(65, ground - offset);
+    ctx.lineTo(65, y + 39);
     ctx.stroke();
-    return y;
 }
 
 const drawSpring = (start, end) => {
