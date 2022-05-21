@@ -286,13 +286,14 @@ playBtn.addEventListener('click', () => {
 })
 
 const play = () => {
+    drawing = false;
+    clearInterval(interval);
     chart.data.datasets[0].data = [];
     chart.data.datasets[1].data = [];
     draw(0);
 }
 
 socket.addEventListener('message', msg => {
-    console.log(msg);
     const data = JSON.parse(msg.data);
     console.log(data);
     switch (data.type){
