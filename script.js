@@ -87,16 +87,18 @@ let interval;
 const socket = new WebSocket('wss://site109.webte.fei.stuba.sk:9001');
 
 btn.addEventListener('click', () => {
-    if(id === null && nameInput.value){
-        const msg = {
-            type: 'create',
-            name: nameInput.value
+    if(isValidR(input.value)){
+        if(id === null && nameInput.value){
+            const msg = {
+                type: 'create',
+                name: nameInput.value
+            }
+            socket.send(JSON.stringify(msg));
+        }else{
+            getDataAndDraw(input.value);
         }
-        socket.send(JSON.stringify(msg));
-    }else{
-        getDataAndDraw(input.value);
-    }
 
+    }
 })
 
 const getDataAndDraw = (rInput) => {
@@ -121,6 +123,20 @@ const getDataAndDraw = (rInput) => {
         endPoint = data.x[data.x.length-1].toString() + ',' + data.t[data.t.length-1];
         draw(t.length - offset);
     })
+}
+
+const isValidR = (input) => {
+    if(!isNaN(input)){
+        input = parseFloat(input);
+        if( input >= -0.45 && input <= 0.45){
+            if(r.length > 0 && Math.abs(input - r[r.length-1]) <= 0.15){
+                return true;
+            }else if(r.length === 0 && Math.abs(input) <= 0.15){
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 const sendData = (t, x, r, type) => {
