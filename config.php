@@ -12,4 +12,11 @@ else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_
 
 require_once "languages/" . $_SESSION['lang'] . ".php";
 
+$servername = "localhost";
+$username = "xkuflik";
+$password = "xkuflikwebte2";
+$dbname = "skuskove1";
+
+$receiveMail = "matej.bredik@gmail.com";
+
 $key = "abcd";

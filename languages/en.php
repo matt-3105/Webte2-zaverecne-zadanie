@@ -11,5 +11,23 @@ $lang = array(
     "graph" => "Graph",
     "animation" => "Animation",
     "nav_mp" => "Main page",
-    "nav_docs" => "Documentation"
+    "nav_docs" => "Documentation",
+    //   dokumentacia.php
+    "doc_state" => "State",
+    "doc_task" => "Task",
+    "doc_student" => "Student",
+    "doc_done" => "Done",
+    "doc_progress" => "Work in progress",
+    "doc_accomplished" => "Accomplished",
+    "doc_task1" => "Bilingualism",
+    "doc_task2" => "API to CAS secured by API key or token",
+    "doc_task3" => "Animation",
+    "doc_task4" => "Graph synchronized with animation",
+    "doc_task5" => "API validation to the extent specified in Task 5",
+    "doc_task6" => "Logging and exporting to csv + sending email",
+    "doc_task7" => "Export API description to pdf",
+    "doc_task8" => "Synchronous monitoring of experimentation",
+    "doc_task9" => "Docker package",
+    "doc_task10" => "Use of the versioning system by all team members",
+    "doc_task11" => "Application finalization"
 );
