@@ -2,7 +2,7 @@
 require_once 'config.php';
 header('Content-Type: application/json; charset=utf-8');
 
-$error = '';
+$error = 'OK';
 $octaveCmd = '';
 
 
@@ -14,7 +14,12 @@ if(isset($_GET['key']) and strcmp($key, $_GET['key']) == 0){
             $start = explode(',', $_GET['start']);
             if(count($start) == 6){
                 $offset = $start[5];
-                $octaveCmd = "\"m1 = 2500; m2 = 320;k1 = 80000; k2 = 500000;b1 = 350; b2 = 15020;pkg load control;A=[0 1 0 0;-(b1*b2)/(m1*m2) 0 ((b1/m1)*((b1/m1)+(b1/m2)+(b2/m2)))-(k1/m1) -(b1/m1);b2/m2 0 -((b1/m1)+(b1/m2)+(b2/m2)) 1;k2/m2 0 -((k1/m1)+(k1/m2)+(k2/m2)) 0];B=[0 0;1/m1 (b1*b2)/(m1*m2);0 -(b2/m2);(1/m1)+(1/m2) -(k2/m2)];C=[0 0 1 0]; D=[0 0];Aa = [[A,[0 0 0 0]'];[C, 0]];Ba = [B;[0 0]];Ca = [C,0]; Da = D;K = [0 2.3e6 5e8 0 8e6];sys = ss(Aa-Ba(:,1)*K,Ba,Ca,Da);t = 0:0.01:5;r =$r;initX1=0; initX1d=0;initX2=0; initX2d=0;[y,t,x]=lsim(sys*[0;1],r*ones(size(t)),t,[$start[0];$start[1];$start[2];$start[3];$start[4]]);output_precision(7);[t x]\"";
+                $octaveCmd = "\"m1 = 2500; m2 = 320;k1 = 80000; k2 = 500000;b1 = 350; b2 = 15020;pkg load control;A=[0 1 0 0;-(b1*b2)/(m1*m2) 0 ((b1/m1)*((b1/m1)+(b1/m2)+(b2/m2)))-(k1/m1) -(b1/m1);b2/m2 0 -((b1/m1)+(b1/m2)+(b2/m2)) 1;k2/m2 0 -((k1/m1)+(k1/m2)+(k2/m2)) 0];
+                B=[0 0;1/m1 (b1*b2)/(m1*m2);0 -(b2/m2);(1/m1)+(1/m2) -(k2/m2)];C=[0 0 1 0];
+                 D=[0 0];Aa = [[A,[0 0 0 0]'];[C, 0]];Ba = [B;[0 0]];Ca = [C,0]; Da = D;
+                 K = [0 2.3e6 5e8 0 8e6];sys = ss(Aa-Ba(:,1)*K,Ba,Ca,Da);t = 0:0.01:5;
+                 r =$r;initX1=0; initX1d=0;initX2=0; initX2d=0;[y,t,x]=lsim(sys*[0;1],
+                 r*ones(size(t)),t,[$start[0];$start[1];$start[2];$start[3];$start[4]]);output_precision(7);[t x]\"";
             }else{
                 $error = 'Bad request';
                 databaseLogging($r,$error);
@@ -43,18 +48,15 @@ if(isset($_GET['key']) and strcmp($key, $_GET['key']) == 0){
         }
     }else if(isset($_GET['command'])) {
         $octaveCmd = $_GET['command'];
-        $cmd = "octave-cli --eval \"$octaveCmd\" 2>&1";
+        $cmd = 'octave-cli --eval "pkg load control;'.$octaveCmd.'" 2>&1;';
         exec($cmd, $output, $return);
         if($return != 0){
-            if(count($output) > 1){
-                $error = $output[0] . $output[2];
-            }else{
-                $error = $output[0];
-            }
+            $error = json_encode($output);
             databaseLogging($octaveCmd,$error);
-            http_response_code(400);
-            exit();
+            header(':', true, 400);
+            echo $error;
         }else{
+            databaseLogging($octaveCmd,$error);
             echo json_encode($output);
         }
     }else {
@@ -97,5 +99,4 @@ function databaseLogging($r,$error){
     $sql = "INSERT INTO logy (log_time,log,log_err) VALUES (?,?,?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([date("Y-m-d H:i:s"),$r,$error]);
-    //sadasdas
 }

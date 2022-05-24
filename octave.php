@@ -27,9 +27,23 @@ require_once "config.php";
             <li><a href="index.php"><?php echo $lang['nav_mp'] ?></a></li>
             <li><a href="octave.php">Octave</a></li>
             <li><a href="dokumentacia.php"><?php echo $lang['nav_docs'] ?></a></li>
-            <li><a href="export.php"><i class="dwn"></i>export</a></li>
         </ul>
     </div>
 </section>
+
+<section>
+    <div id="textarea-wrapper">
+        <label for="prikaz"><?php echo $lang['prikaz'] ?></label>
+        <textarea name="prikaz" id="prikaz"></textarea>
+    </div>
+    <button class="btn" name="submit" id="submit"><?php echo $lang['button'] ?></button>
+</section>
+
+<section>
+    <h2><?php echo $lang['result']?></h2>
+    <div id="response"></div>
+</section>
+
+<script src="octaveScript.js"></script>
 </body>
 </html>
