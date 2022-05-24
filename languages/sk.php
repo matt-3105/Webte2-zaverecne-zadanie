@@ -1,9 +1,8 @@
 <?php
 $lang = array(
-//   Global
     "greeting" => "Vitajte",
     "name" => "Vaše meno",
-    "code" => "Rovnica",
+    "code" => "Hodnota",
     "placeholder" => "Hodnota 'r'",
     "button" => "Odoslať",
     "play_button" => "Prehrať",
@@ -13,6 +12,11 @@ $lang = array(
     "animation" => "Animácia",
     "nav_mp" => "Hlavná stránka",
     "nav_docs" => "Dokumentácia",
+    "tooltip" => "Výška prekážky môže byť najviac 15cm (0.15). Rozmedzie povolených hodnôt je od -45cm po 45cm.",
+    "actusers" => "Aktívny používatelia",
+//    octave.php
+    "prikaz" => "Príkaz",
+    "result" => "Výsledok",
 //   dokumentacia.php
     "doc_state" => "Stav",
     "doc_task" => "Úloha",
@@ -20,6 +24,7 @@ $lang = array(
     "doc_done" => "Dokončené",
     "doc_progress" => "Rozrobené",
     "doc_accomplished" => "Splnené",
+    "doc_unfinished" => "Nesplnené",
     "doc_task1" => "Dvojjazyčnosť",
     "doc_task2" => "API ku CAS zabezpečené API kľúčom alebo tokenom",
     "doc_task3" => "Animácia",
@@ -30,5 +35,25 @@ $lang = array(
     "doc_task8" => "Synchrónne sledovanie experimentovania",
     "doc_task9" => "Docker balíček",
     "doc_task10" => "Používanie verzionovacieho systému všetkými členmi tímu",
-    "doc_task11" => "Finalizácia aplikácie"
+    "doc_task11" => "Finalizácia aplikácie",
+    "getlogs" => "Získanie logov",
+    //dokumentacia.php opis, api
+    "webfun" => "Funkcionality stránky:",
+    "mpfun" => 'Na hlavnej stranke uzivatel moze zadat hodnotu r(od -0.45 po 0.45) a stlacit tlacidlo odoslat, toto spusti simulaciu. Pokial zaklikol moznost graf bude vidiet priebeh simulacie na grafe, a ak zaklikol moznost animacia
+                bude vidiet priebeh simulacie pomocov animacie. Ak zada aj meno pred tym ako stlacil odoslat, tak mu vytvori "miestnost" kde sa k nemu mozu pripojit dalsi uzivatel a sledovat jeho vyskum. Tito uzivatelia vsak
+                nemaju povolene ovplyvnovat jeho vyskum tym ze odoslu svoje hodnoty r. Ak si chce uzivatel prehrat simulaciu odznova moze stlacit tlacidlo prehrat.',
+    "octfun" => "Na podstranke octave moze uzivatel zadat prikaz ktory chce vypocitat pomocov CAS octave. Po kliknuti na tlacidlo odoslat sa mu vysledok zobrazi v casti vysledky.",
+    "docfun" => "Na podstranke dokumentacia si moze uzivatel poslat zaznamy zadanych prikazov vo forme suboru .csv na email alebo si moze tento subor exportovat. Moze tu vidiet opis api a popis stranky, co si moze stiahnut pomocou tlacidla Api Manual.",
+    "apidesc" => "Opis api",
+    "apiparams" => "Parametre:",
+    "apiresult" => "Vysledok:",
+    "apikey" => "api kluc",
+    "apir" => "velkost prekazky",
+    "apistart" => "startovacie hodnoty (dobrovolne)",
+    "apit" => "cas",
+    "apirback" => "zadana velkost prekazky",
+    "apicommand" => "prikaz pre octave",
+    "apians" => "vratene hodnoty",
+    "apibutton" => "Api Manuál",
+    "apiexample" => "Priklad:"
 );

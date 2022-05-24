@@ -58,7 +58,7 @@ require_once "config.php";
         <tr>
             <td class="tg-baqh"><?php echo $lang['doc_done'] ?></td>
             <td class="tg-baqh"><?php echo $lang['doc_task2'] ?></td>
-            <td class="tg-0lax">Tomáš Minárik</td>
+            <td class="tg-0lax">Tomáš Minárik, Matúš Kuflík, Filip Kolenčík, Matej Bredik</td>
         </tr>
         <tr>
             <td class="tg-baqh"><?php echo $lang['doc_done'] ?></td>
@@ -81,9 +81,9 @@ require_once "config.php";
             <td class="tg-0lax">Matej Bredik, Matúš Kuflík, Filip Kolenčík</td>
         </tr>
         <tr>
-            <td class="tg-baqh"><?php echo $lang['doc_progress'] ?></td>
+            <td class="tg-baqh"><?php echo $lang['doc_done'] ?></td>
             <td class="tg-baqh"><?php echo $lang['doc_task7'] ?></td>
-            <td class="tg-0lax">Matej Bredik, Matúš kuflík</td>
+            <td class="tg-0lax">Matej Bredik, Matúš Kuflík</td>
         </tr>
         <tr>
             <td class="tg-baqh"><?php echo $lang['doc_done'] ?></td>
@@ -101,48 +101,56 @@ require_once "config.php";
             <td class="tg-0lax">Matej Bredik, Matúš Kuflík, Filip Kolenčík, Tomáš Minárik</td>
         </tr>
         <tr>
-            <td class="tg-baqh"><?php echo $lang['doc_progress'] ?></td>
+            <td class="tg-baqh"><?php echo $lang['doc_done'] ?></td>
             <td class="tg-baqh"><?php echo $lang['doc_task11'] ?></td>
             <td class="tg-0lax">Filip Kolenčík, Matej Bredik</td>
         </tr>
         </tbody>
     </table>
 </section>
+
 <section>
     <div id="target">
-        <h2>Opis api</h2>
+        <div class="descard">
+            <h2><?php echo $lang['webfun'] ?></h2>
+            <p><?php echo $lang['mpfun'] ?></p>
+            <p><?php echo $lang['octfun'] ?></p>
+            <p><?php echo $lang['docfun'] ?></p>
+
+        </div>
+        <h2 class="centerh2"><?php echo $lang['apidesc'] ?></h2>
 
         <div class="apicard">
-            <h3 class="apireq">&nbsp;&nbsp;&nbsp;&nbsp;https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api/suspension</h3>
-            <h4 class="apireq">Príklad: https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api/suspension?key=abcd&r=0&start=0.1000068,4e-7,0.0000068,0.0000083,-0.0004246,5</h4>
+            <h3 class="apireq">&nbsp;&nbsp;&nbsp;&nbsp;GET https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api/suspension</h3>
+            <h4 class="apireq"><?php echo $lang['apiexample'] ?> https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api/suspension?key=abcd&r=0&start=0.1000068,4e-7,0.0000068,0.0000083,-0.0004246,5</h4>
             <div class="apicontent">
                 <div class="apiparams">
-                    <p><b>Parametre:</b></p>
-                    <p>key - api kluc</p>
-                    <p>r - velkost prekazky</p>
-                    <p>start - startovacie hodnoty (dobrovolne)</p>
+                    <p><b><?php echo $lang['apiparams'] ?></b></p>
+                    <p>key - <?php echo $lang['apikey'] ?></p>
+                    <p>r - <?php echo $lang['apir'] ?></p>
+                    <p>start - <?php echo $lang['apistart'] ?></p>
                 </div>
                 <div class="apiresult">
-                    <p><b>Vysledok:</b></p>
-                    <p>t - cas</p>
-                    <p>x - vratene hodnoty</p>
-                    <p>r - zadana velkost prekazky</p>
+                    <p><b><?php echo $lang['apiresult'] ?></b></p>
+                    <p>t - <?php echo $lang['apit'] ?></p>
+                    <p>x - <?php echo $lang['apians'] ?></p>
+                    <p>r - <?php echo $lang['apirback'] ?></p>
                 </div>
             </div>
         </div>
 
         <div class="apicard">
-            <h3 class="apireq">&nbsp;&nbsp;&nbsp;&nbsp;https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api</h3>
-            <h4 class="apireq">Príklad: https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api?key=abcd&command=1%2B1</h4>
+            <h3 class="apireq">&nbsp;&nbsp;&nbsp;&nbsp;GET https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api</h3>
+            <h4 class="apireq"><?php echo $lang['apiexample'] ?> https://site109.webte.fei.stuba.sk/Webte2-zaverecne-zadanie/api?key=abcd&command=1%2B1</h4>
             <div class="apicontent">
                 <div class="apiparams">
-                    <p><b>Parametre:</b></p>
-                    <p>key - api kluc</p>
-                    <p>command - prikaz pre octave</p>
+                    <p><b><?php echo $lang['apiparams'] ?></b></p>
+                    <p>key - <?php echo $lang['apikey'] ?></p>
+                    <p>command - <?php echo $lang['apicommand'] ?></p>
                 </div>
                 <div class="apiresult">
-                    <p><b>Vysledok:</b></p>
-                    <p>ans - vratene hodnoty</p>
+                    <p><b><?php echo $lang['apiresult'] ?></b></p>
+                    <p>ans - <?php echo $lang['apians'] ?></p>
                 </div>
             </div>
         </div>
@@ -150,7 +158,7 @@ require_once "config.php";
     </div>
 </section>
 <section>
-    <button id="uploadtopdf" class="btn">HTML to PDF Convert</button>
+    <button id="uploadtopdf" class="btn"><?php echo $lang['apibutton'] ?></button>
 </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

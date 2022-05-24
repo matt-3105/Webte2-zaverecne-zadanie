@@ -2,7 +2,7 @@
 $lang = array(
     "greeting" => "Welcome",
     "name" => "Your name",
-    "code" => "Equation",
+    "code" => "Value",
     "placeholder" => "Value of 'r'",
     "button" => "Submit",
     "play_button" => "Play",
@@ -12,6 +12,11 @@ $lang = array(
     "animation" => "Animation",
     "nav_mp" => "Main page",
     "nav_docs" => "Documentation",
+    "tooltip" => "The height of the obstacle can not exceed 15 cm (0.15). The allowed values are from -45cm to 45cm.",
+    "actusers" => "Active users",
+    //    octave.php
+    "prikaz" => "Command",
+    "result" => "Result",
     //   dokumentacia.php
     "doc_state" => "State",
     "doc_task" => "Task",
@@ -19,6 +24,7 @@ $lang = array(
     "doc_done" => "Done",
     "doc_progress" => "Work in progress",
     "doc_accomplished" => "Accomplished",
+    "doc_unfinished" => "Unfinished",
     "doc_task1" => "Bilingualism",
     "doc_task2" => "API to CAS secured by API key or token",
     "doc_task3" => "Animation",
@@ -29,5 +35,26 @@ $lang = array(
     "doc_task8" => "Synchronous monitoring of experimentation",
     "doc_task9" => "Docker package",
     "doc_task10" => "Use of the versioning system by all team members",
-    "doc_task11" => "Application finalization"
+    "doc_task11" => "Application finalization",
+    "getlogs" => "Get logs",
+    //dokumentacia.php opis, api
+    "webfun" => "Website functions",
+    "mpfun" => 'On the main page, the user can enter the value of r (from -0.45 to 0.45) and press the send button, this will start the simulation. If you clicked the graph option, you will see the progress of the simulation on the graph, and if you clicked the animation option,
+                you will see the progress of the simulation with the help of animation. If he enters the name before he pressed to send, he will create a "room" where another user can join him and monitor his research. However, these users
+                are not allowed to influence his research by sending their values r. If the user wants to play the simulation again, he can press the play button.',
+    "octfun" => "On the octave subpage, the user can enter a command that he wants to calculate with octave CAS. After clicking on the send button, the result will be displayed in the results section.",
+    "docfun" => "On the documentation subpage, the user can send the records of the entered images in the form of a .csv file to an email or export this file. Here you can see a description of the api and a description of the page, which you can download using the button
+                Api Manual.",
+    "apidesc" => "Api description",
+    "apiparams" => "Parameters:",
+    "apiresult" => "Result:",
+    "apikey" => "api key",
+    "apir" => "size of obstacle",
+    "apistart" => "start values (optional)",
+    "apit" => "time",
+    "apirback" => "specified obstacle size",
+    "apicommand" => "command for octave",
+    "apians" => "return values",
+    "apibutton" => "Api Manual",
+    "apiexample" => "Example:"
 );

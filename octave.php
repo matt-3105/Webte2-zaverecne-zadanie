@@ -34,7 +34,7 @@ require_once "config.php";
 <section>
     <div id="textarea-wrapper">
         <label for="prikaz"><?php echo $lang['prikaz'] ?></label>
-        <textarea name="prikaz" id="prikaz"></textarea>
+        <textarea name="prikaz" id="prikaz" rows="5" cols="40"></textarea>
     </div>
     <button class="btn" name="submit" id="submit"><?php echo $lang['button'] ?></button>
 </section>

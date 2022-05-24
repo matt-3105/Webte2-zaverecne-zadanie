@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+require_once "config.php";
 ?>
 
 <!doctype html>
@@ -33,27 +33,56 @@ include "config.php";
 </section>
 
 <section>
-    <label for="name"><?php echo $lang['name'] ?>
-        <input type="text" name="name" id="name">
-    </label>
-    <label for="input"><?php echo $lang['code'] ?>
-        <input type="text" name="input" id="input" placeholder="<?php echo $lang['placeholder'] ?>">
-    </label>
-    <button name="submit" id="submit"><?php echo $lang['button'] ?></button>
-    <button name="play" id="play"><?php echo $lang['play_button'] ?></button>
-    <label for="graph"><?php echo $lang['graph']?>
-        <input type="checkbox" id="graph">
-    </label>
-    <label for="graph"><?php echo $lang['animation']?>
-        <input type="checkbox" id="animation">
-    </label>
-
-
-    <div id="my-chart-wrapper">
-        <canvas id="my-chart"></canvas>
+    <div class="center-wrapper">
+        <div id="input-wrapper">
+            <label for="name"><?php echo $lang['name'] ?>
+                <input type="text" name="name" id="name">
+            </label>
+            <label for="input"><?php echo $lang['code'] ?>
+                <input type="text" name="input" id="input" placeholder="<?php echo $lang['placeholder'] ?>" required>
+                <div class="tooltip"><img src="tooltip%20icon.jpg">
+                    <span class="tooltiptext"><?php echo $lang['tooltip'] ?></span>
+                </div>
+            </label>
+        </div>
     </div>
-    <canvas id="car" height="380" width="85"></canvas>
-    <div id="users"></div>
+
+    <div class="center-wrapper">
+        <div id="checkbox-wrapper">
+            <label class="container" for="graph"><?php echo $lang['graph']?>
+                <input type="checkbox" id="graph">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container" for="animation"><?php echo $lang['animation']?>
+                <input type="checkbox" id="animation">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="center-wrapper">
+        <div id="button-wrapper">
+            <button name="submit" id="submit" class="btn"><?php echo $lang['button'] ?></button>
+            <button name="play" id="play" class="btn"><?php echo $lang['play_button'] ?></button>
+        </div>
+    </div>
+
+    <div class="center-wrapper">
+        <div id="graph-wrapper">
+            <div id="my-chart-wrapper">
+                <canvas id="my-chart"></canvas>
+            </div>
+            <canvas id="car" height="380" width="85"></canvas>
+        </div>
+    </div>
+
+    <div class="center-wrapper">
+        <div id="users-wrapper">
+            <h3><?php echo $lang['actusers'] ?></h3>
+            <div id="users"></div>
+        </div>
+    </div>
+
 </section>
 
 <script src="script.js"></script>

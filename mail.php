@@ -44,7 +44,7 @@ try {
 
     //Email Settings
     $mail->isHTML(true);
-    $mail->setFrom('tym13webte2@azet.sk', 'Matej');
+    $mail->setFrom('tym13webte2@azet.sk', 'Webte team 13');
     $mail->addAddress($receiveMail);
     $mail->Subject = 'Logs';
     $mail->Body = "V prilohe je vypis tabulky zo zoznamom logov";

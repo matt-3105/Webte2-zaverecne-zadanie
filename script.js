@@ -95,9 +95,8 @@ btn.addEventListener('click', () => {
             }
             socket.send(JSON.stringify(msg));
         }else{
-            getDataAndDraw(input.value);
+            getDataAndDraw(parseFloat(input.value));
         }
-
     }
 })
 
@@ -129,7 +128,8 @@ const isValidR = (input) => {
     if(!isNaN(input)){
         input = parseFloat(input);
         if( input >= -0.45 && input <= 0.45){
-            if(r.length > 0 && Math.abs(input - r[r.length-1]) <= 0.15){
+            const dif = input - r[r.length-1];
+            if(r.length > 0 && Math.abs(dif.toFixed(3)) <= 0.15){
                 return true;
             }else if(r.length === 0 && Math.abs(input) <= 0.15){
                 return true;
@@ -295,7 +295,7 @@ const play = () => {
 
 socket.addEventListener('message', msg => {
     const data = JSON.parse(msg.data);
-    console.log(data);
+    // console.log(data);
     switch (data.type){
         case 'newUser':
             addUsers([data.user])
@@ -328,7 +328,7 @@ socket.addEventListener('message', msg => {
         case 'closed':
             const activeUsers = document.getElementsByClassName('activeUser');
             for(let user of activeUsers){
-                console.log(user.getAttribute('userID'));
+                // console.log(user.getAttribute('userID'));
                 if(Number(user.getAttribute('userID')) === data.id){
                     user.remove();
                 }
